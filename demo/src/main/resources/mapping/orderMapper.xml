@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.demo.dao.OrderDao">
+
+    <resultMap type="com.demo.entity.OrderEntity" id="baseMap">
+        <result property="orderId" column="order_id"/>
+        <result property="orderName" column="order_name"/>
+        <result property="userId" column="user_id"/>
+        <result property="username" column="username"/>
+    </resultMap>
+    <update id="update">
+        update t_order
+        set order_name = #{orderName},
+            user_id    = #{userId},
+            username   = #{username}
+        where order_id = #{orderId}
+    </update>
+
+    <update id="updateUserName">
+        update t_order
+        set username = #{username}
+        where user_id = #{userId}
+    </update>
+
+    <select id="selectOneById" resultMap="baseMap">
+        select *
+        from t_order
+        where order_id = #{orderId}
+    </select>
+</mapper>
