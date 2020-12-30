@@ -4,9 +4,11 @@ import cn.fenqing.aop.annotation.aspect.AspectHandler;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.concurrent.*;
 
@@ -14,6 +16,7 @@ import java.util.concurrent.*;
  * @author fenqing
  */
 @Configuration
+@ConditionalOnBean(AspectHandler.class)
 public class AopAnnotationFlagAutoConfiguration {
 
     @Bean

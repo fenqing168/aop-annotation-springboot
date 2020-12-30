@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author fenqing
  */
-@Component
+//@Component
 public class UserAspectHandler implements AspectHandler {
 
     @Autowired

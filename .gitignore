@@ -23,3 +23,4 @@ selenium-debug.log
 *.sln
 debug.log
 */target
+*.iml
